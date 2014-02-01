@@ -20,6 +20,10 @@
  */
 
 App::uses('Controller', 'Controller');
+App::uses('Sanitize', 'Utility');
+App::uses('String', 'Utility');
+App::uses('CakeNumber', 'Utility');
+// App::uses('CakeEmail', 'Network/Email');
 
 /**
  * Application Controller
@@ -31,4 +35,33 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+/**
+ * An array containing the names of helpers this controller uses.
+ *
+ * @var mixed
+ */
+	public $helpers = array('Session', 'Html', 'Form', 'Number');
+
+/**
+ * Array containing the names of components this controller uses.
+ *
+ * @var array
+ */
+	public $components = array('Session');
+
+/**
+ * Models used by the controller.
+ *
+ * @var array
+ */
+	public $uses = array();
+
+/**
+ * Controller actions for which authorization is not required.
+ *
+ * @var array
+ */
+	public $allowedActions = array('display');
+	
+
 }
