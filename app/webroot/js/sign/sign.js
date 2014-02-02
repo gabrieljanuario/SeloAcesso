@@ -9,20 +9,16 @@
 * ALL RIGHTS RESERVED
 */
 
-seloAcessibilidade = function (dados){
-	data__id = dados.slice(dados.indexOf("{")+1, dados.indexOf("}")); 
-   data__title = dados.replace("{"+data__id+"}","");
-	  
-   
-	 ac__lk = "http://www.acessibilidadebrasil.org.br/sign/aprovado/cod="+data__id;
+seloAcessibilidade = function (data__id, data__title){
+	 ac__lk = "http://www.acessibilidadebrasil.org.br/sign/valid/"+data__id;
 	ac__tit = "Aprova\u00e7\u00e3o pelas Normas Brasileiras de Acessibilidade na Internet para "+data__title+" ";
 	ac__alt = "Imagem Representando o Selo de Aprova\u00e7\u00e3o pelas Normas Brasileiras de Acessibilidade na Internet";
 		
 	return {	
-		insertSign: function (size = '92x47'){
-			document.write("<div style=\"display:block\">");
+		insertSign: function (sign__size = '92x47'){
+			document.write("<div style=\"display:block\" class=\"seloAcessibilidade\">");
 			document.write("<a title=\""+ac__tit+"\" target=\"_blank\" href=\""+ac__lk+"\" >");
-			document.write("<img src=\"http://www.acessibilidadebrasil.org.br/sign/selo_acessobr"+size+".gif\" alt=\""+ac__alt+"\" />");
+			document.write("<img src=\"http://www.acessibilidadebrasil.org.br/sign/selo_acessobr"+sign__size+".gif\" alt=\""+ac__alt+"\" />");
 			document.write("</a>");
 			document.write("</div>");
 		}

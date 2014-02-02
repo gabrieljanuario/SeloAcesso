@@ -48,18 +48,33 @@ class SignController extends AppController {
 	public function validaters($client)
 	{
 	
-		$client = Sanitize::clean($client, array('encode' => false));
-		$signInfo = $this->Sign->find('first',
-			array(
-				'conditions' => array(
-					'Sign.id' => $client
+		if (!empty($client)){
+			$client = Sanitize::clean($client, array('encode' => false));
+			$signInfo = $this->Sign->find('first',
+				array(
+					'conditions' => array(
+						'Sign.id' => $client
+					)
 				)
-			)
-		);
-				
-       $this->set('sign', $signInfo);
-       
+			);
+			
+			if(!empty($signInfo)){		
+	       		$this->set('sign', $signInfo);
+			}else{
+				$this->redirect(array('controller' => 'sign', 'action' => 'invalid'));			
+			}
+
+		}else{		
+			$this->redirect(array('controller' => 'sign', 'action' => 'invalid'));
+		}	
 	}
+
 	
+	
+	public function invalid()
+	{
+	
+	
+	}
 	
 }

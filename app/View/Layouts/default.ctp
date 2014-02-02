@@ -26,7 +26,9 @@
 <body lang="br">
 	<div id="global" class="<?php print !empty($body_class) ? $body_class : ''; ?> <?php print !empty($body_page) ? $body_page : ''; ?>" >
 
-		<?php // print $this->element('header'); ?>
+		<?php // print $this->element('header'); 
+			print $this->element('menu');
+		?>
         <!-- CONTENT -->        
         <div id="content" class="<?php print !empty($body_class) ? $body_class : ''; ?>" >
 	        <div id="cont">        

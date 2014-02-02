@@ -25,8 +25,12 @@
 
 
 	
-	/* SIGN */
-	Router::connect('/sign/valid/:client/',
+	/* 
+	 * SIGN 
+	 * */
+	
+	// VALIDADO
+	Router::connect('/sign/valid/:client',
 		array('controller' => 'sign', 'action' => 'validaters'),
 		array(
 			'client' => '[a-zA-Z0-9_-]*',
@@ -34,6 +38,9 @@
 		)
 	);
 
+	// INVALIDO
+	Router::connect('/sign/notfound', array('controller' => 'sign', 'action' => 'invalid'));
+	
 
 
 
