@@ -39,21 +39,26 @@ class SignController extends AppController {
 	
 	public $uses = array();
 
-	public $allowedActions = array('index','validaters');
-	
-	
 	public function index()
 	{
 	
 	}
 	
 	
-	public function validaters()
+	public function validaters($client)
 	{
 	
-	
-	
-	
+		$client = Sanitize::clean($client, array('encode' => false));
+		$signInfo = $this->Sign->find('first',
+			array(
+				'conditions' => array(
+					'Sign.id' => $client
+				)
+			)
+		);
+				
+       $this->set('sign', $signInfo);
+       
 	}
 	
 	
