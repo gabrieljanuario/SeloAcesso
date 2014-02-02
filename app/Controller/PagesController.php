@@ -31,11 +31,26 @@ App::uses('AppController', 'Controller');
 class PagesController extends AppController {
 
 /**
+ * Controller name
+ *
+ * @var string
+ */
+	public $name = 'Pages';
+
+/**
+ * Default helper
+ *
+ * @var array
+ */
+	public $helpers = array('Html');
+
+/**
  * This controller does not use a model
  *
  * @var array
  */
-	public $uses = array();
+	public $uses = array(); 
+
 
 /**
  * Displays a view
