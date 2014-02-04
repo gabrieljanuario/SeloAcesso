@@ -60,6 +60,10 @@ class SignController extends AppController {
 			
 			if(!empty($signInfo)){		
 	       		$this->set('sign', $signInfo);
+				$this->set('body_class', 'valid'); 
+	       		
+			
+			
 			}else{
 				$this->redirect(array('controller' => 'sign', 'action' => 'invalid'));			
 			}

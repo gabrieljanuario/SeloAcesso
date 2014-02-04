@@ -10,7 +10,6 @@
                                 
                 echo $this->Html->css('reset-min.css');
                 echo $this->Html->css('style.css');
-                echo $this->Html->css('style_pages.css');
                                                         
 				echo $this->Html->script('jquery.currency.js');
                 // echo $this->Html->script('jquery.modal.js');

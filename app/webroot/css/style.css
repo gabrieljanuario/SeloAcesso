@@ -1,0 +1,54 @@
+*{ font-family:  Arial, Verdana, sans-serif; margin:0; padding:0;}
+body{ margin:0;	padding:0; color:#011f2e; font-size:12px;  background: url(../img/bg.png) repeat 0 0;  }
+a{ text-decoration:none; color:#48B2CA;}
+a:hover{ text-decoration:underline;}
+table, img{ border:0;}
+ul li{list-style:none;}
+ul, li, p, h1, h2, h3, h4, h5, h6{ margin:0; padding:0;}
+h1, h2, h3, h4, h5, h6{ font-size:14px; font-weight:normal;}
+label{ display:block;}
+input{ border:none; display:block;}
+br.clear{ height:100%;}
+
+/* ==================
+	CLASSES
+=====================*/
+.clear{	clear:both; margin:0; padding:0;}
+.center, #cont{ margin:0 auto; width:970px;}
+.hide{ display:none !important;}
+.show{ display:block !important;}
+.first{ margin-left:0 !important;}
+.last{ margin-right:0 !important;}
+#menuAux a{ color: #FFF;}
+.border5{ border-radius: 5px;  -moz-border-radius: 5px;} 
+
+/* =============
+	CONTENT
+================ */	
+#global{ margin:0; padding:0; width:100%; }
+#cont{ background-color: #FFF; padding: 13px;}
+
+/* =============
+	VALID
+================ */	
+.valid .l{ float: left; width: 70%;}
+.valid .r{ float: right; width: 30%;}
+.valid h1{}
+.valid .l > p{}
+.valid #statsBox{}
+.valid #statsBox .line{}
+.valid #statsBox .line > .l1{}
+.valid #statsBox .line > .l2{}
+.valid #statsBox .line > .l3{}
+.valid #statsBox #sl1{}
+.valid #statsBox #sl2{}
+.valid #statsBox #sl3{}
+.valid #disclaimer{}
+.valid #disclaimer h2{}
+.valid #disclaimer p{}
+.valid #btnFooter{}
+.valid #btnFooter a{ color: #FFF; padding: 10px 29px; }
+.valid #btnFooter a > strong{}
+.valid #btnFooter a > span{}
+.valid #btnFooter a.btn1{ background-color: #036291; float: left;}
+.valid #btnFooter a.btn2{ background-color: #da5555; float: right; }
