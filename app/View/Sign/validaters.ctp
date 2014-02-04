@@ -1,62 +1,39 @@
-<?php
-
-if (isset($sign)) :
-	echo print_r($sign);
-
-else :
-
-	echo "N";
-
-endif;
-
-?>
 <div class="center">
 	
 	<!-- Left -->
 	<div class="l">
-		<h1>SITE ACESSIVEL</h1>
-		<p>Este site foi testado e aprovado por profissionais e especialistas em
-usabilidade e usuário técnico portador de deficiência.</p>
+
+		<h1><?php echo __d('view', 'Valid.title'); ?></h1>
+		<p><?php echo __d('view', 'Valid.title.subscr'); ?></p>
 	
-		<br class="clear" />	
-		<div id="statsBox" class="border5">
+		<div id="statsBox" class="border5 box">
 				<div id="sl1" class="line">
-					<span class="l1">>&nbsp;</span>
-					<span class="l2">Site Acessível</span>
-					<span class="l3">www.acessobrasil.com.br</span>
+					<span class="l1"><?php echo __d('view', 'Valid.boxstats.line1.label'); ?></span>
+					<span class="l2"><?php echo $sign['Sign']['url']; ?></span>
 				</div>	
 
 				<div id="sl2" class="line">
-					<span class="l1">&nbsp;</span>
-					<span class="l2">Status</span>
-					<span class="l3">Acessibilidade garantida e Aprovada em 11/12/2013</span>
+					<span class="l1"><?php echo __d('view', 'Valid.boxstats.line2.label'); ?></span>
+					<span class="l2"><?php echo __d('view', 'Valid.boxstats.line2.value'); ?> <?php echo date('Y-m-d', strtotime($sign['Sign']['created'])); ?></span>
 				</div>	
 
 				<div id="sl3" class="line">
-					<span class="l1">>&nbsp;</span>
-					<span class="l2">Razão Social</span>
-					<span class="l3">Acessibilidade Brasil</span>
+					<span class="l1"><?php echo __d('view', 'Valid.boxstats.line3.label'); ?></span>
+					<span class="l2"><?php echo $sign['Sign']['razao_social']; ?></span>
 				</div>	
 		</div>	
 
-		<br class="clear" />					
-
-		<br class="clear" />			
-		<div id="disclaimer" class="border5">
-			<h2>Visualizou o selo Acessibilidade Brasil?</h2>
-			<p>Todo o conteudo do site esta acessivel para pessoas portadoras de necessidades 
-			especiais. O selo Acessibilidade Brasil fica visível somente se o site auditado estiver 
-			aprovado nos testes por especialistas e softwares especificos realizados todos os dias.
-			Apenas uma avaliação feita por especialistas em usabilidade e usuários técnico 
-			portadores de deficiência podem avaliar e validar se um site esta realmente acessível 
-			para todos.</p>
+		<div id="disclaimer" class="border5 box">
+			<h2><?php echo __d('view', 'Valid.disclaimer.title'); ?></h2>
+			<p><?php echo __d('view', 'Valid.disclaimer.subscr'); ?></p>
 		</div>
 
-		<br class="clear" />		
 		<div id="btnFooter">
-			<a class="btn1 border5" href=""><strong>Verififique<strong>se um site é acessível<span>></span></a>
-			<a class="btn2 border5" href=""><strong>Denuncie<strong>um selo falso<span>></span></a>
-		<div>
+			<a class="btn1 border5" href="#"><?php echo __d('view', 'Valid.btnverifique.value'); ?></a>
+			<a class="btn2 border5" href="#"><?php echo __d('view', 'Valid.btndenuncie.value'); ?></a>
+		</div>
+		
+
 	
 		<div class="clear"></div>
 	</div>

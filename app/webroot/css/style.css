@@ -1,26 +1,26 @@
 *{ font-family:  Arial, Verdana, sans-serif; margin:0; padding:0;}
-body{ margin:0;	padding:0; color:#011f2e; font-size:12px;  background: url(../img/bg.png) repeat 0 0;  }
+body{ margin:0;	padding:0; color:#034a6e; font-size:12px; background: url(../img/bg.png) repeat 0 0; line-height: 150%;  }
 a{ text-decoration:none; color:#48B2CA;}
-a:hover{ text-decoration:underline;}
+a:hover{ text-decoration:none;}
 table, img{ border:0;}
 ul li{list-style:none;}
 ul, li, p, h1, h2, h3, h4, h5, h6{ margin:0; padding:0;}
 h1, h2, h3, h4, h5, h6{ font-size:14px; font-weight:normal;}
 label{ display:block;}
 input{ border:none; display:block;}
-br.clear{ height:100%;}
+br.clear{ height:0; line-height: 0; margin:0; padding: 0; font-size:0;}
 
 /* ==================
 	CLASSES
 =====================*/
 .clear{	clear:both; margin:0; padding:0;}
-.center, #cont{ margin:0 auto; width:970px;}
+.center, #cont{ margin:0 auto; width:940px;}
 .hide{ display:none !important;}
 .show{ display:block !important;}
 .first{ margin-left:0 !important;}
 .last{ margin-right:0 !important;}
 #menuAux a{ color: #FFF;}
-.border5{ border-radius: 5px;  -moz-border-radius: 5px;} 
+.border5, .valid > #cont{ border-radius: 5px;  -moz-border-radius: 5px;} 
 
 /* =============
 	CONTENT
@@ -31,24 +31,25 @@ br.clear{ height:100%;}
 /* =============
 	VALID
 ================ */	
-.valid .l{ float: left; width: 70%;}
-.valid .r{ float: right; width: 30%;}
-.valid h1{}
-.valid .l > p{}
-.valid #statsBox{}
-.valid #statsBox .line{}
-.valid #statsBox .line > .l1{}
-.valid #statsBox .line > .l2{}
-.valid #statsBox .line > .l3{}
-.valid #statsBox #sl1{}
-.valid #statsBox #sl2{}
-.valid #statsBox #sl3{}
-.valid #disclaimer{}
-.valid #disclaimer h2{}
-.valid #disclaimer p{}
-.valid #btnFooter{}
-.valid #btnFooter a{ color: #FFF; padding: 10px 29px; }
-.valid #btnFooter a > strong{}
-.valid #btnFooter a > span{}
+.valid > #cont{ font-size: 17px; background: #FFF url(../img/bg2.png) repeat-y 0 0; padding: 35px 22px; }
+.valid .l{ float: left; width: 589px; }
+.valid .r{ float: right; width: 310px; }
+.valid .box{ border: 1px solid #d7dfe6; background-color: #FFF;}
+.valid h1{ font-size: 35px; background: url(../img/selo_logo.png) no-repeat 0 0; padding-left: 110px; padding-top: 10px; height: 39px;}
+.valid .l > p{ margin-top: 19px;}
+.valid #statsBox{ margin-top: 39px;}
+.valid #statsBox .line{ display: block; clear: both; padding: 18px 0 18px 70px; border-bottom: 1px dashed #d8d8d8; background-image: url(../img/icons1.png); background-repeat: no-repeat; }
+.valid #statsBox .line > .l1{ display: block; font-weight: bold;}
+.valid #statsBox .line > .l2{ display: block; font-size: 14px;}
+.valid #statsBox #sl1{  background-position: 15px 15px;}
+.valid #statsBox #sl2{ background-position: 15px -45px;}
+.valid #statsBox #sl3{ border: none;  background-position: 15px -105px;}
+.valid #disclaimer{ padding: 18px; margin-top: 28px;}
+.valid #disclaimer > h2{ font-size: 17px; font-weight: bold; margin-bottom: 12px;}
+.valid #disclaimer > p{ font-size: 14px;}
+.valid #btnFooter{ margin-top: 46px;}
+.valid #btnFooter a{ color: #FFF; padding: 12px 29px; width: 200px; font-weight: bold; font-size: 13px;}
+.valid #btnFooter a > strong{ display: block; font-size: 30px;  margin-bottom: 5px; text-transform: uppercase;}
+.valid #btnFooter a > span{ font-size: 30px; float: right; margin-right: -18px; margin-top: -14px;}
 .valid #btnFooter a.btn1{ background-color: #036291; float: left;}
-.valid #btnFooter a.btn2{ background-color: #da5555; float: right; }
+.valid #btnFooter a.btn2{ background-color: #da5555; float: right;}
