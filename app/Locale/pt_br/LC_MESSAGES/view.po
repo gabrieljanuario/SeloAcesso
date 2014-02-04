@@ -1,0 +1,33 @@
+################
+## Valid
+################
+msgid "Valid.title"
+msgstr "SITE ACESSIVEL"
+
+msgid "Valid.title.subscr"
+msgstr "Este site foi testado e aprovado por profissionais e especialistas em usabilidade e usu&aacute;rio t&eacute;cnico portador de defici&ecirc;ncia."
+
+msgid "Valid.boxstats.line1.label"
+msgstr "Site Acess&iacute;vel"
+
+msgid "Valid.boxstats.line2.label"
+msgstr "Status"
+
+msgid "Valid.boxstats.line2.value"
+msgstr "Acessibilidade garantida e Aprovada em "
+
+msgid "Valid.boxstats.line3.label"
+msgstr "Raz&atilde;o Social"
+
+msgid "Valid.disclaimer.title"
+msgstr "Visualizou o selo Acessibilidade Brasil?"
+
+msgid "Valid.disclaimer.subscr"
+msgstr "Todo o conteudo do site esta acess&iacute;vel para pessoas portadoras de necessidades especiais. O selo Acessibilidade Brasil fica vis&iacute;vel somente se o site auditado estiver aprovado nos testes por especialistas e softwares especificos realizados todos os dias. Apenas uma avalia&ccedil;&atilde;o feita por especialistas em usabilidade e usu&aacute;rios t&eacute;cnico portadores de defici&ecirc;ncia podem avaliar e validar se um site esta realmente acess&iacute;vel para todos."
+
+msgid "Valid.btnverifique.value"
+msgstr "<strong>Verififique</strong> se um site &eacute; acess&iacute;vel<span>></span>"
+
+msgid "Valid.btndenuncie.value"
+msgstr "<strong>Denuncie</strong> um selo falso<span>></span>"
+
