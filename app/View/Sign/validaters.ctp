@@ -1,3 +1,10 @@
+<?php
+	$this->set('body_class', 'layout1');
+	$this->set('body_page', 'valid');
+?>
+
+<?php $title_for_layout = __d('view', 'Valid.title'); ?>
+
 <div class="center">
 	
 	<!-- Left -->

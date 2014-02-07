@@ -73,7 +73,23 @@ class SignController extends AppController {
 		}	
 	}
 
-	
+	public function reportit()
+	{
+		if ($this->request->is('post') && (!empty($this->request->data['Sign'])))
+		{
+		
+			$clean_data = Sanitize::clean($this->request->data, array('encode' => false, 'escape' => false));
+			$data = array(
+				'Sign' => $clean_data['Sign']
+			);
+						$this->SignReport->create();
+						$this->SignReport->save($data);				
+			
+			
+		}
+		
+		
+	}	
 	
 	public function invalid()
 	{

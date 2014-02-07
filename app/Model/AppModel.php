@@ -34,6 +34,36 @@ App::uses('Sanitize', 'Utility');
  */
 class AppModel extends Model {
 
+	public function beforeSave($options = array())
+	{
+		if (empty($this->id) && empty($this->data[$this->alias]['id']))
+		{
+			$this->data[$this->alias]['created'] = date('Y-m-d H:i:s');
+			
+			if (!empty($this->modelAttribute))
+			{
+				$this->data[$this->alias]['model'] = $this->modelAttribute;
+			}
+			
+			if (!empty($this->whitelist))
+			{
+				array_push($this->whitelist, 'model', 'foreign_key', 'hash', 'created');
+			}
+		}
+		else
+		{
+			$this->data[$this->alias]['updated'] = date('Y-m-d H:i:s');
+			
+			if (!empty($this->whitelist))
+			{
+				array_push($this->whitelist, 'updated');
+			}
+		}
+		
+		return parent::beforeSave($options);
+	}
 
+	
+	
 
 }

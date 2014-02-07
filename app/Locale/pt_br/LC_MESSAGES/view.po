@@ -31,3 +31,20 @@ msgstr "<strong>Verififique</strong> se um site &eacute; acess&iacute;vel<span>>
 msgid "Valid.btndenuncie.value"
 msgstr "<strong>Denuncie</strong> um selo falso<span>></span>"
 
+################
+## REPORT IT
+################
+msgid "Sign.reportit.url.title"
+msgstr "Site"
+
+msgid "Sign.reportit.name.title"
+msgstr "Nome"
+
+msgid "Sign.reportit.email.title"
+msgstr "Email"
+
+msgid "Sign.reportit.message.title"
+msgstr "Mensagem"
+
+msgid "Sign.reportit.submit.title"
+msgstr "Enviar"

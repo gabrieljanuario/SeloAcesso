@@ -12,6 +12,10 @@
 		array('controller' => 'sign', 'action' => 'invalid'), 
 		array('title' => 'Selo Invalido')); ?></li>
 	
+	    <li><?php echo $this->Html->link('Selo - Denuncie', 
+		array('controller' => 'sign', 'action' => 'reportit'), 
+		array('title' => 'Denuncie')); ?></li>
+
 	
 	</ul>
 </fieldset>

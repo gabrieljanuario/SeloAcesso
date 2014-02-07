@@ -3,7 +3,7 @@
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php echo $title_for_layout; ?> <?php echo __d('view', 'Layouts.fb_default.bazzapp'); ?></title>
+		<?php echo $title_for_layout; ?></title>
         <?php
                 // echo $this->Html->meta('icon');
                 // echo $this->element('meta');

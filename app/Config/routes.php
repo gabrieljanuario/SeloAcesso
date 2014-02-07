@@ -22,11 +22,28 @@
 
 
 
+	/* 
+	 * SIGN - PT
+	 * */
+	
+	// VALIDADO
+	Router::connect('/selo/valida/:client',
+		array('controller' => 'sign', 'action' => 'validaters'),
+		array(
+			'client' => '[a-zA-Z0-9_-]*',
+			'pass' => array('client')
+		)
+	);
 
+	// INVALIDO
+	Router::connect('/selo/nao-encontrado', array('controller' => 'sign', 'action' => 'invalid'));
 
+	// DENUNCIE
+	Router::connect('/selo/denuncie', array('controller' => 'sign', 'action' => 'reportit'));
+	
 	
 	/* 
-	 * SIGN 
+	 * SIGN - EN 
 	 * */
 	
 	// VALIDADO

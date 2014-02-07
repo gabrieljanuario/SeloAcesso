@@ -10,7 +10,7 @@
 */
 
 seloAcessibilidade = function (data__id, data__title){
-	 ac__lk = "http://www.acessibilidadebrasil.org.br/sign/valid/"+data__id;
+	 ac__lk = "http://www.acessibilidadebrasil.org.br/selo/valida/"+data__id;
 	ac__tit = "Aprova\u00e7\u00e3o pelas Normas Brasileiras de Acessibilidade na Internet para "+data__title+" ";
 	ac__alt = "Imagem Representando o Selo de Aprova\u00e7\u00e3o pelas Normas Brasileiras de Acessibilidade na Internet";
 		
