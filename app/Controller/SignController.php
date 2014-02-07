@@ -1,43 +1,14 @@
 <?php
-/**
- * Static content controller.
- *
- * This file will render views from views/pages/
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.Controller
- * @since         CakePHP(tm) v 0.2.9
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
 
 App::uses('AppController', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
 
-/**
- * Static content controller
- *
- * Override this controller by placing a copy in controllers directory of an application
- *
- * @package       app.Controller
- * @link http://book.cakephp.org/2.0/en/controllers/pages-controller.html
- */
+
 class SignController extends AppController {
 
-/**
- * This controller does not use a model
- *
- * @var array
- */
 	public $name = 'Sign';
 	
-	public $uses = array();
+	public $uses = array('SignReport');
 
 	public function index()
 	{
@@ -78,14 +49,23 @@ class SignController extends AppController {
 		if ($this->request->is('post') && (!empty($this->request->data['Sign'])))
 		{
 		
-			$clean_data = Sanitize::clean($this->request->data, array('encode' => false, 'escape' => false));
-			$data = array(
-				'Sign' => $clean_data['Sign']
+			$data = Sanitize::clean($this->request->data, array('encode' => false, 'escape' => false));
+
+			// SAVE DATA
+			$this->SignReport->create();
+			$this->SignReport->save($data['Sign']['reportit']);				
+
+			// SEND MAIL
+			$to = "gabriel@grupow2b.com.br";
+			$subject = 'testando';
+			$template = 'sign_report_received';
+			$vars = array(
+				'storeTitle' => 'TESTE',
+				'from' => 'contato@grupow2b.com.br'
 			);
-						$this->SignReport->create();
-						$this->SignReport->save($data);				
-			
-			
+
+			return $this->sendMailSmtp($to, $subject, $template, $vars);		
+
 		}
 		
 		
@@ -96,5 +76,30 @@ class SignController extends AppController {
 	
 	
 	}
+
+	
+	
+	public function sendMailSmtp($to, $subject, $template, $vars){
+			
+			$email = new CakeEmail('smtp');
+			$email->helpers(array('Html'));
+			$email->to($to);
+			$email->subject($subject);				
+			$email->viewVars($vars);
+			$email->template($template, 'default');
+			
+			if (stripos($to, "facebook.com") !== false){
+				$email->emailFormat('text');
+			}else{
+				$email->emailFormat('both');
+			}		
+			
+			if($email->send()){ return "1"; } else{ return "0"; }		
+	}
+	
+	
+	
+	
+	
 	
 }
