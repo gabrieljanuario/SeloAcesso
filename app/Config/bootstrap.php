@@ -108,3 +108,4 @@ CakeLog::config('error', array(
 
 Configure::write('Config.language', 'pt_br');
 Configure::write('Cache.disable', true);
+Configure::write('Mail.DefaultTo', 'gabriel@grupow2b.com.br');

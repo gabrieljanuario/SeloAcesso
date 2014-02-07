@@ -53,19 +53,24 @@ class SignController extends AppController {
 
 			// SAVE DATA
 			$this->SignReport->create();
-			$this->SignReport->save($data['Sign']['reportit']);				
+			if ($this->SignReport->save($data['Sign']['reportit'])){				
 
-			// SEND MAIL
-			$to = "gabriel@grupow2b.com.br";
-			$subject = 'testando';
-			$template = 'sign_report_received';
-			$vars = array(
-				'storeTitle' => 'TESTE',
-				'from' => 'contato@grupow2b.com.br'
-			);
-
-			return $this->sendMailSmtp($to, $subject, $template, $vars);		
-
+				// SEND MAIL
+					// 1. SIGN REPORT RECEIVED
+					$to = Configure::read('Mail.DefaultTo');
+					$subject = 'testando';
+					$template = 'sign_report_received';
+					$vars = array(
+						'title' => $data['Sign']['reportit']['name'],
+						'txt' => $data['Sign']['reportit']['url'] 
+					);
+					return $this->sendMailSmtp($to, $subject, $template, $vars);		
+					
+					// 2. USER REPORTED
+					
+					
+			}
+				
 		}
 		
 		
@@ -75,30 +80,7 @@ class SignController extends AppController {
 	{
 	
 	
-	}
-
-	
-	
-	public function sendMailSmtp($to, $subject, $template, $vars){
-			
-			$email = new CakeEmail('smtp');
-			$email->helpers(array('Html'));
-			$email->to($to);
-			$email->subject($subject);				
-			$email->viewVars($vars);
-			$email->template($template, 'default');
-			
-			if (stripos($to, "facebook.com") !== false){
-				$email->emailFormat('text');
-			}else{
-				$email->emailFormat('both');
-			}		
-			
-			if($email->send()){ return "1"; } else{ return "0"; }		
-	}
-	
-	
-	
+	}	
 	
 	
 	

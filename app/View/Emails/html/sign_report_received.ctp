@@ -1,3 +1,3 @@
-<?php echo $storeTitle; ?> ,<br /><br />
+<?php echo $title; ?> ,<br /><br />
 
-<p>TESTETETETETTETE</p>
+<p><?php echo $txt; ?></p>

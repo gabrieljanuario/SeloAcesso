@@ -23,7 +23,7 @@ App::uses('Controller', 'Controller');
 App::uses('Sanitize', 'Utility');
 App::uses('String', 'Utility');
 App::uses('CakeNumber', 'Utility');
-// App::uses('CakeEmail', 'Network/Email');
+App::uses('CakeEmail', 'Network/Email');
 
 /**
  * Application Controller
@@ -61,7 +61,22 @@ class AppController extends Controller {
  *
  * @var array
  */
-	public $allowedActions = array('display');
+	public $allowedActions = array('display', 'sendMailSmtp');
+	
+	
+	
+	// SEND EMAIL	
+	public function sendMailSmtp($to, $subject, $template, $vars){
+			
+			$email = new CakeEmail('smtp');
+			$email->helpers(array('Html'));
+			$email->to($to);
+			$email->subject($subject);				
+			$email->viewVars($vars);
+			$email->template($template, 'default');
+			$email->emailFormat('both');
+			if($email->send()){ return "1"; } else{ return "0"; }		
+	}
 	
 	
 	

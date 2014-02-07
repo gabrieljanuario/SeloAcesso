@@ -45,20 +45,6 @@ class EmailConfig {
 		//'charset' => 'utf-8',
 		//'headerCharset' => 'utf-8',
 	);
-
-	public $smtp = array(
-		'transport' => 'Smtp',
-		'from' => array('site@localhost' => 'My Site'),
-		'host' => 'localhost',
-		'port' => 25,
-		'timeout' => 30,
-		'username' => 'user',
-		'password' => 'secret',
-		'client' => null,
-		'log' => false,
-		//'charset' => 'utf-8',
-		//'headerCharset' => 'utf-8',
-	);
 	
 	public $smtp = array(
 		'transport' => 'Smtp',
@@ -69,7 +55,7 @@ class EmailConfig {
 		'username' => 'contato@grupow2b.com.br',
 		'password' => 'leow2bgabriel',
 		'client' => null,
-		'log' => false,
+		'log' => false
 		//'charset' => 'utf-8',
 		//'headerCharset' => 'utf-8',
 	);
