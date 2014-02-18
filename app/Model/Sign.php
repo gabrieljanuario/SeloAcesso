@@ -5,7 +5,7 @@ class Sign extends AppModel
 {
 	public $name = 'Sign';
 	public $useTable = 'signs';
-	public $whitelist = array('id', 'url', 'created');
+	public $whitelist = array('id', 'url', 'razao_social', 'created', 'results');
 	public $actsAs = array('Containable');
 		
 }

@@ -8,7 +8,7 @@ class SignController extends AppController {
 
 	public $name = 'Sign';
 	
-	public $uses = array('SignReport');
+	public $uses = array('Sign', 'Report');
 
 	public function index()
 	{
@@ -52,8 +52,8 @@ class SignController extends AppController {
 			$data = Sanitize::clean($this->request->data, array('encode' => false, 'escape' => false));
 
 			// SAVE DATA
-			$this->SignReport->create();
-			if ($this->SignReport->save($data['Sign']['reportit'])){				
+			$this->Report->create();
+			if ($this->Report->save($data['Sign']['reportit'])){				
 
 				// SEND MAIL
 					// 1. SIGN REPORT RECEIVED
